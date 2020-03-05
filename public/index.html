@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.9.3/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.9.3/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.9.3/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.9.3/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.9.3/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+  </head>
+  <body>
+    <form action="">
+
+      <table>
+          <tr>
+              <td>
+                  Elija el tipo de procesador que prefiere
+              </td>
+              <td>
+                  <select name="proc" id="proc">
+                      <option value="1">i7</option>
+                      <option value="2">i5</option>
+                  </select>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  Elija la cantidad de memoria RAM deseada
+              </td>
+              <td>
+                  <select name="ram" id="ram">
+                      <option value="1">16</option>
+                      <option value="2">8</option>
+                  </select>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  Elija el tipo de tarjeta gráfica que desea
+              </td>
+              <td>
+                  <select name="grafica" id="grafica">
+                      <option value="1">Dedicada</option>
+                      <option value="2">Integrada</option>
+                  </select>
+              </td>
+          </tr>
+      </table>
+      <input type="button" value="Enviar" onclick="obtenerDatos()">
+  </form> 
+
+  <div id="capa"></div>
+  <script type="text/javascript">
+  function obtenerDatos(){
+      var procesador=parseInt(document.getElementById('proc').value);
+      var ram=parseInt(document.getElementById('ram').value);
+      var grafica=parseInt(document.getElementById('grafica').value);
+      
+      if(procesador==1&&ram==1&&grafica==1){
+          var capa = document.getElementById("capa");
+          capa.innerHTML = 'MSI - Laptop gaming GF75 9SC-220MX de 17.3" - Core i7 - GeForce GTX 1650 - Memoria 16GB - HDD 1TB+SSD 128GB - Negro<br><img src="https://pisces.bbystatic.com/image2/BestBuy_MX/images/products/1000/1000221679_sa.jpg" style="width: 500px; height: 200px"></img>';
+      }else
+      if (procesador==1&&ram==2&&grafica==1) {
+          var capa = document.getElementById("capa");
+          capa.innerHTML = 'Lenovo Legion Y540 - Core i7 - GeForce GTX 1650 - Memoria 8GB - HDD 1TB+SSD 128GB - Negro<br><img src="https://www.lenovo.com/medias/lenovo-legion-y540-15-3.png?context=bWFzdGVyfHJvb3R8MTI1NjA1fGltYWdlL3BuZ3xoYmMvaDY4LzEwMDkyNjE0MjU0NjIyLnBuZ3w5YzU2YTdkYjU3M2UxZjY1NGMyMzlhNDc2ZDAyZjZhNTVhYmFiMTc5NTc1YzZhY2U2N2JlZjU5NzM5OWM2M2Yy" style="width: 500px; height: 200px"></img>';
+          
+      }else
+      if (procesador==2&&ram==1&&grafica==2) {
+          var capa = document.getElementById("capa");
+          capa.innerHTML = 'HP- Laptop 15-dy1004la de 15.6"- Core i5- Intel UHD- Memoria 16GB- SSD 256GB+OPTANE 16GB- Plata<br><img src="https://pisces.bbystatic.com/image2/BestBuy_MX/images/products/1000/1000225073_sa.jpg" style="width: 400px; height: 200px"></img>';
+      }else
+      if (procesador==2&&ram==2&&grafica==2) {
+          var capa = document.getElementById("capa");
+          capa.innerHTML = 'HP- Laptop Pavilion 13-an1011la de 13.3"- Core i5- Intel UHD- Memoria 8GB- SSD de 256GB<br><img src="https://pisces.bbystatic.com/image2/BestBuy_MX/images/products/1000/1000225078_sa.jpg" style="width: 400px; height: 200px"></img>';
+      }else{
+          var capa = document.getElementById("capa");
+          capa.innerHTML = 'Laptop Lenovo T440 14<br><img src="https://i.linio.com/p/98e00f5aedc643cfcad29ce4c8e01cff-product.jpg" style="width: 400px; height: 200px"></img>';    
+      }
+  }
+
+  
+</script>
+  </body>
+</html>
